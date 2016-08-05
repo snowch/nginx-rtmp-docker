@@ -8,7 +8,7 @@ If you want to use a custom nginx.conf file, create a volume mapping:
 
 `docker run -dp 1935:1935 -v /path/to/my/custom/nginx.conf:/etc/nginx/nginx.conf dvdgiessen/nginx-rtmp-docker`
 
-## Connect
+## Connect from OBS
 ```
 Streaming Service: Custom
 rtmp://<your docker host ip>/live
