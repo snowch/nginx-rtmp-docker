@@ -8,6 +8,12 @@ If you want to use a custom nginx.conf file, create a volume mapping:
 
 `docker run -dp 1935:1935 -v /path/to/my/custom/nginx.conf:/etc/nginx/nginx.conf dvdgiessen/nginx-rtmp-docker`
 
+## Connect
+
+Streaming Service: Custom
+rtmp://<your docker host ip>/live
+Play Path/Stream Key: test
+
 ## Troubleshooting
 If you encounter an error like this:
 ```
