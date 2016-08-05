@@ -2,11 +2,25 @@
 **Dockerfile for building lightweight nginx + rtmp module for replicating streams**
 
 ## Usage
+
+Setup port forwarding (not required for docker native os x)
+
+```
+docker-machine stop
+for i in {10000..10999}; 
+do 
+   VBoxManage modifyvm "default" --natpf1 "tcp-port$i,tcp,,$i,,$i"; 
+   VBoxManage modifyvm "default" --natpf1 "udp-port$i,udp,,$i,,$i"; 
+done
+docker-machine start
+```
+
 `docker run -dp 1935:1935 dvdgiessen/nginx-rtmp-docker`
 
 If you want to use a custom nginx.conf file, create a volume mapping:
 
 `docker run -dp 1935:1935 -v /path/to/my/custom/nginx.conf:/etc/nginx/nginx.conf dvdgiessen/nginx-rtmp-docker`
+
 
 ## Stream from OBS
 ```
